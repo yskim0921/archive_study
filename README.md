@@ -28,7 +28,10 @@ Split_smol/
 ```
 
 - `train/` : 학습용 데이터
-- `val/`   : 검증용 데이터  
+- `val/`   : 검증용 데이터
+- 📥 데이터셋: Skin Disease Classification Image Dataset (Kaggle)
+- https://www.kaggle.com/datasets/riyaelizashaju/skin-disease-classification-image-dataset?resource=download
+
 
 ---
 
@@ -36,7 +39,7 @@ Split_smol/
 
 ```bash
 # 필수 패키지 설치
-pip install torch torchvision matplotlib
+pip install boto3
 ```
 
 - Python ≥ 3.8  
@@ -48,10 +51,8 @@ pip install torch torchvision matplotlib
 ## 🚀 학습 실행
 
 ```bash
-python train_resnext.py
+피부질환분류.ipynb 실행
 ```
-
-- `train_resnext.py` : 학습 및 검증 코드  
 
 ---
 
