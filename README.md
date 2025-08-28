@@ -88,7 +88,7 @@ fig/
 
 예시 그래프:  
 
-![Accuracy Curve](fig/accuracy_curve.png)  
+---<img width="1200" height="900" alt="accuracy_curve" src="https://github.com/user-attachments/assets/49961c50-0f1c-427d-9ae9-c211c7a16464" />
 
 ---
 
@@ -98,7 +98,8 @@ fig/
 - 배치 크기 변경 → `batch_size`  
 - 데이터 경로 변경 → `data_root = "/content/Split_smol"`  
 
----
+
+
 
 ## 👨‍💻 작성자
 
