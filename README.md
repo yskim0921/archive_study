@@ -51,57 +51,56 @@ pip install torch torchvision matplotlib
 python train_resnext.py
 ```
 
-- **train_resnext.py** : 학습 및 검증 코드  
+- `train_resnext.py` : 학습 및 검증 코드  
 
 ---
 
 ## 🧠 주요 기능
 
 ### ✅ 모델 구조
-- `torchvision.models.resnext50_32x4d` 사용  
-- 마지막 FC 레이어를 클래스 수에 맞게 교체  
+- `torchvision.models.resnext50_32x4d` 사용
+- 마지막 FC 레이어를 클래스 수에 맞게 교체
 
 ### ✅ 데이터 전처리
-- `Resize(224,224)`  
-- `ToTensor()`  
-- `Normalize(mean, std)` (ImageNet 기준)  
+- `Resize(224,224)`
+- `ToTensor()`
+- `Normalize(mean, std)` (ImageNet 기준)
 
-### ✅ 학습 설정
-- Optimizer : `SGD(lr=0.001, momentum=0.9)`  
-- Loss : `CrossEntropyLoss`  
-- Epoch : 기본 20  
+### ✅ 학습
+- Optimizer : `SGD(lr=0.001, momentum=0.9)`
+- Loss : `CrossEntropyLoss`
+- Epoch : 기본 20
 
 ### ✅ 평가 지표
-- Epoch마다 **Train Accuracy**, **Validation Accuracy** 출력  
-- Accuracy 변화를 `/fig/accuracy_curve.png` 로 저장  
+- Epoch마다 **Train Accuracy, Validation Accuracy 출력**
+- Accuracy 변화를 `fig/accuracy_curve.png` 로 저장
 
 ---
 
 ## 📊 결과 (예시)
 
-학습이 끝나면 `/fig` 폴더 안에 Accuracy 그래프가 저장됩니다.  
+학습이 끝나면 `/fig` 폴더 안에 Accuracy 그래프가 저장됩니다.
 
 ```
 fig/
 └── accuracy_curve.png
 ```
 
-예시 그래프:  
+예시 그래프:
 
 <img width="1200" height="900" alt="accuracy_curve" src="https://github.com/user-attachments/assets/49961c50-0f1c-427d-9ae9-c211c7a16464" />
+
+
 
 ---
 
 ## 📌 커스텀 설정
+- 학습 epoch 변경 → `num_epochs`
+- 배치 크기 변경 → `batch_size`
+- 데이터 경로 변경 → `data_root = "/content/Split_smol"`
 
-- 학습 epoch 변경 → `num_epochs`  
-- 배치 크기 변경 → `batch_size`  
-- 데이터 경로 변경 → `data_root = "/content/Split_smol"`  
-
-
-
+---
 
 ## 👨‍💻 작성자
-
 - 김윤성  
-- 2025.08  
+- 2025.08
