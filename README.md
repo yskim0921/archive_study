@@ -88,7 +88,7 @@ fig/
 
 예시 그래프:  
 
----<img width="1200" height="900" alt="accuracy_curve" src="https://github.com/user-attachments/assets/49961c50-0f1c-427d-9ae9-c211c7a16464" />
+<img width="1200" height="900" alt="accuracy_curve" src="https://github.com/user-attachments/assets/49961c50-0f1c-427d-9ae9-c211c7a16464" />
 
 ---
 
