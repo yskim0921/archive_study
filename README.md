@@ -8,25 +8,24 @@
 
 ## 📂 데이터셋 구조
 
-데이터는 다음과 같이 준비해야 합니다.
+데이터는 다음과 같이 준비해야 합니다:
 
-
-
+```
 Split_smol/
 │
 ├── train/
-│ ├── 질환A/
-│ │ ├── img1.jpg
-│ │ ├── img2.jpg
-│ │ └── ...
-│ └── 질환B/
-│ └── ...
+│   ├── 질환A/
+│   │   ├── img1.jpg
+│   │   ├── img2.jpg
+│   │   └── ...
+│   └── 질환B/
+│       └── ...
 │
 └── val/
-├── 질환A/
-├── 질환B/
-└── ...
-
+    ├── 질환A/
+    ├── 질환B/
+    └── ...
+```
 
 - `train/` : 학습용 데이터
 - `val/`   : 검증용 데이터  
@@ -38,70 +37,70 @@ Split_smol/
 ```bash
 # 필수 패키지 설치
 pip install torch torchvision matplotlib
+```
 
+- Python ≥ 3.8  
+- PyTorch ≥ 2.0  
+- torchvision ≥ 0.15  
 
-Python ≥ 3.8
+---
 
-PyTorch ≥ 2.0
+## 🚀 학습 실행
 
-torchvision ≥ 0.15
-
-🚀 학습 실행
+```bash
 python train_resnext.py
+```
 
+- **train_resnext.py** : 학습 및 검증 코드  
 
-train_resnext.py : 학습 및 검증 코드
+---
 
-🧠 주요 기능
+## 🧠 주요 기능
 
-모델 구조
+### ✅ 모델 구조
+- `torchvision.models.resnext50_32x4d` 사용  
+- 마지막 FC 레이어를 클래스 수에 맞게 교체  
 
-torchvision.models.resnext50_32x4d 사용
+### ✅ 데이터 전처리
+- `Resize(224,224)`  
+- `ToTensor()`  
+- `Normalize(mean, std)` (ImageNet 기준)  
 
-마지막 FC 레이어를 클래스 수에 맞게 교체
+### ✅ 학습 설정
+- Optimizer : `SGD(lr=0.001, momentum=0.9)`  
+- Loss : `CrossEntropyLoss`  
+- Epoch : 기본 20  
 
-데이터 전처리
+### ✅ 평가 지표
+- Epoch마다 **Train Accuracy**, **Validation Accuracy** 출력  
+- Accuracy 변화를 `/fig/accuracy_curve.png` 로 저장  
 
-Resize(224,224)
+---
 
-ToTensor()
+## 📊 결과 (예시)
 
-Normalize(mean, std) (ImageNet 기준)
+학습이 끝나면 `/fig` 폴더 안에 Accuracy 그래프가 저장됩니다.  
 
-학습
-
-Optimizer : SGD(lr=0.001, momentum=0.9)
-
-Loss : CrossEntropyLoss
-
-Epoch : 기본 20
-
-평가 지표
-
-Epoch마다 Train Accuracy, Validation Accuracy 출력
-
-Accuracy 변화를 fig/accuracy_curve.png 로 저장
-
-📊 결과 (예시)
-
-학습이 끝나면 /fig 폴더 안에 Accuracy 그래프가 저장됩니다.
-
+```
 fig/
 └── accuracy_curve.png
+```
 
+예시 그래프:  
 
-예시 그래프:
+![Accuracy Curve](fig/accuracy_curve.png)  
 
-📌 커스텀 설정
+---
 
-학습 epoch 변경 → num_epochs
+## 📌 커스텀 설정
 
-배치 크기 변경 → batch_size
+- 학습 epoch 변경 → `num_epochs`  
+- 배치 크기 변경 → `batch_size`  
+- 데이터 경로 변경 → `data_root = "/content/Split_smol"`  
 
-데이터 경로 변경 → data_root = "/content/Split_smol"
+---
 
-👨‍💻 작성자
+## 👨‍💻 작성자
 
-김윤성
-
-2025.08
+- 김윤성  
+- 2025.08  
